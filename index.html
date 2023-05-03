@@ -1,32 +1,32 @@
 <html>
-            <head>
-            <script async src="https://ssp.igaw.io/sdk/apsspads.js"></script>
-            <script>
-              var apsspads = window.apsspads || { cmd: [] };
-              apsspads.cmd.push(function() {
-                apsspads.setConfig({ pubId: "139927226" }); // 애드팝콘 앱키
-                apsspads.defineAdUnits({
-                  code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
-                  plcmtId: "IcuXseZsidAQYi8ㅋㅋㅋ",  // 애드팝콘 지면 Id
-                  size: [300, 250],  // 크기 (네이티브 광고일 경우 정의하지 않습니다)
-                            fallback: {
-					nam: {
-						adUnitId: "WEB_nw_banner-N345765840ㅋㅋㅋ"  // NAM 광고 유닛 ID
-					}
-				}
-                });
+   <style>
+      .ad-banner {
+      width: 300px;
+      height: 500px;
+      background-color: '#e2e2e2';
+      }
+   </style>
+   <body>
+      <head>
+         <script async src="https://ssp.igaw.io/sdk/apsspads.js"></script>
+         <script>
+            var apsspads = window.apsspads || { cmd: [] };
+            apsspads.cmd.push(function() {
+              apsspads.setConfig({ pubId: "783297646" }); // 애드팝콘 앱키
+              apsspads.defineAdUnits({
+                code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
+                plcmtId: "FDDJtGyANP9SCvO",  // 애드팝콘 지면 Id
+                size: [300, 250],  // 크기 (네이티브 광고일 경우 정의하지 않습니다)
+                          fallback: {
+            nam: {
+            adUnitId: "WEB_nw_banner-N345765840"  // NAM 광고 유닛 ID
+            }
+            }
               });
-            </script>
-            </head>
-              <style>
-                .ad-banner {
-			width: 300px;
-			height: 500px;
-			background-color: '#e2e2e2';
-                }
-              </style>
-              <body>
-                <p>안녕</p>
-                <div id="banner" class="ad-banner"></div>
-              </body>
-            </html>
+            });
+         </script>
+      </head>
+      <p>안녕</p>
+      <div id="banner" class="ad-banner"></div>
+   </body>
+</html>
