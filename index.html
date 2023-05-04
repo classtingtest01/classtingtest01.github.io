@@ -13,16 +13,16 @@
             var apsspads = window.apsspads || { cmd: [] };
             apsspads.cmd.push(function() {
               apsspads.setConfig({ pubId: "139927226",nam: true, idfa: '50024DC5-6FA2-4D49-BA56-065324F3DA46', idfv: 'CB45E756-8CC7-4CBA-BF67-617097789D71'}); // 애드팝콘 앱키
-              apsspads.defineAdUnits({
+              apsspads.defineAdUnits([{
                 code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
                 plcmtId: "tUuF2VsGb77rB9F",  // 애드팝콘 지면 Id
                 size: [300, 250],  // 크기 (네이티브 광고일 경우 정의하지 않습니다)
-                          fallback: {
-            nam: {
-            adUnitId: "WEB_nw_banner-N345765840"  // NAM 광고 유닛 ID
-            }
-            }
-              });
+                fallback: {
+                  nam: {
+                     adUnitId: "WEB_nw_banner-N345765840"  // NAM 광고 유닛 ID
+                  }
+                }
+              }]);
             });
          </script>
       </head>
