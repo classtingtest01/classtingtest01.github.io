@@ -18,11 +18,16 @@
          const IOS_APP_KEY = '139927226';
          const IOS_PLACEMENT_ID = 'di6gllh0x0VaKG0';
          
-         const device = window.navigator.userAgent;
-//          const appKey = device === DeviceType.ANDROID ? ANDROID_APP_KEY : IOS_APP_KEY;
-//          const placementId = device === DeviceType.ANDROID ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
+         const DeviceType =  {
+           ANDROID : 'classting_android',
+           IOS : 'classting_iphone',
+         };
          
-         console.log({device});
+         const device = window.navigator.userAgent;
+         const appKey = device === DeviceType.ANDROID ? ANDROID_APP_KEY : IOS_APP_KEY;
+         const placementId = device === DeviceType.ANDROID ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
+         
+         console.log({'device === DeviceType.ANDROID': device === DeviceType.ANDROID,device, appKey});
         
          var apsspads = window.apsspads || { cmd: [] };
          apsspads.cmd.push(function() {
