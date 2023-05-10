@@ -11,6 +11,19 @@
    </head>
    <body>
       <script>
+         
+         const ANDROID_APP_KEY = '783297646';
+         const ANDROID_PLACEMENT_ID = 'lViRqs5grqXHbw9';
+
+         const IOS_APP_KEY = '139927226';
+         const IOS_PLACEMENT_ID = 'di6gllh0x0VaKG0';
+         
+         const device = window.navigator.userAgent;
+         const appKey = device === DeviceType.ANDROID ? ANDROID_APP_KEY : IOS_APP_KEY;
+         const placementId = device === DeviceType.ANDROID ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
+         
+         console.log({device});
+        
          var apsspads = window.apsspads || { cmd: [] };
          apsspads.cmd.push(function() {
            apsspads.setConfig({ pubId: "139927226", nam: true}); // 애드팝콘 앱키
