@@ -24,10 +24,9 @@
          };
          
          const device = window.navigator.userAgent;
-         const appKey = device === DeviceType.ANDROID ? ANDROID_APP_KEY : IOS_APP_KEY;
-         const placementId = device === DeviceType.ANDROID ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
-         
-         console.log({'device === DeviceType.ANDROID': device === DeviceType.ANDROID,device, appKey});
+         cosnt isAndroid = device.includes(DeviceType.ANDROID);
+         const appKey = isAndroid ? ANDROID_APP_KEY : IOS_APP_KEY;
+         const placementId = isAndroid ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
         
          var apsspads = window.apsspads || { cmd: [] };
          apsspads.cmd.push(function() {
@@ -37,7 +36,7 @@
              plcmtId: placementId,  // 애드팝콘 지면 Id
              fallback: {
                nam: {
-                  adUnitId: "WEB_nw_banner-N345765840"  // NAM 광고 유닛 ID
+                  adUnitId: "WEB_nw_native_1-N345765840"  // NAM 광고 유닛 ID
                }
              }
            });
