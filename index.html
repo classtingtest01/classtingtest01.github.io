@@ -24,7 +24,7 @@
          };
          
          const device = window.navigator.userAgent;
-         cosnt isAndroid = device.includes(DeviceType.ANDROID);
+         const isAndroid = device.includes(DeviceType.ANDROID);
          const appKey = isAndroid ? ANDROID_APP_KEY : IOS_APP_KEY;
          const placementId = isAndroid ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
         
