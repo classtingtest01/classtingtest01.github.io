@@ -7,44 +7,45 @@
          }
       </style>
    </head>
+	
    <body>
-      <script>
-         
-         const ANDROID_APP_KEY = '783297646';
-         const ANDROID_PLACEMENT_ID = 'lViRqs5grqXHbw9';
-
-         const IOS_APP_KEY = '139927226';
-         const IOS_PLACEMENT_ID = 'di6gllh0x0VaKG0';
-         
-         const DeviceType =  {
-           ANDROID : 'classting_android',
-           IOS : 'classting_iphone',
-         };
-         
-         const device = window.navigator.userAgent;
-         const isAndroid = device.includes(DeviceType.ANDROID);
-         const appKey = isAndroid ? ANDROID_APP_KEY : IOS_APP_KEY;
-         const placementId = isAndroid ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
-        
-         var apsspads = window.apsspads || { cmd: [] };
-         apsspads.cmd.push(function() {
-           apsspads.setConfig({ pubId: appKey, nam: true}); // 애드팝콘 앱키
-           apsspads.defineAdUnits({
-             code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
-             plcmtId: placementId,  // 애드팝콘 지면 Id
-             fallback: {
-               nam: {
-                  adUnitId: isAndroid ? 'Classting_Post_Native_Android-N256497692' : 'Classting_Post_Native_iOS-N256497692'  // NAM 광고 유닛 ID
-               }
-             }
-           });
-           apsspads.addEventListener("error", function(obj) { // 광고 미 노출 시 호출
-				console.log('에러 :', obj); // {providerName: "apssp|nam", code: "banner", stat: 0}
-			  });
-           apsspads.requestBids();
-         });         
-      </script>
       <p>안녕</p>
       <div id="banner" class="ad-banner"></div>
    </body>
+	
+   <script>
+    const ANDROID_APP_KEY = '783297646';
+    const ANDROID_PLACEMENT_ID = 'lViRqs5grqXHbw9';
+
+    const IOS_APP_KEY = '139927226';
+    const IOS_PLACEMENT_ID = 'di6gllh0x0VaKG0';
+
+    const DeviceType =  {
+      ANDROID : 'classting_android',
+      IOS : 'classting_iphone',
+    };
+
+    const device = window.navigator.userAgent;
+    const isAndroid = device.includes(DeviceType.ANDROID);
+    const appKey = isAndroid ? ANDROID_APP_KEY : IOS_APP_KEY;
+    const placementId = isAndroid ? ANDROID_PLACEMENT_ID : IOS_PLACEMENT_ID;
+
+    var apsspads = window.apsspads || { cmd: [] };
+    apsspads.cmd.push(function() {
+      apsspads.setConfig({ pubId: appKey, nam: true}); // 애드팝콘 앱키
+      apsspads.defineAdUnits({
+        code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
+        plcmtId: placementId,  // 애드팝콘 지면 Id
+        fallback: {
+          nam: {
+   	  adUnitId: isAndroid ? 'Classting_Post_Native_Android-N256497692' : 'Classting_Post_Native_iOS-N256497692'  // NAM 광고 유닛 ID
+          }
+        }
+      });
+      apsspads.addEventListener("error", function(obj) { // 광고 미 노출 시 호출
+	console.log('에러 :', obj); // {providerName: "apssp|nam", code: "banner", stat: 0}
+      });
+      apsspads.requestBids();
+    });         
+   </script>
 </html>
