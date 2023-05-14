@@ -1,8 +1,7 @@
 <html>
    <style>
       .ad-banner {
-      width: 300px;
-      height: 500px;
+      height: 80px;
       background-color: '#e2e2e2';
       }
    </style>
@@ -36,7 +35,7 @@
              plcmtId: placementId,  // 애드팝콘 지면 Id
              fallback: {
                nam: {
-                  adUnitId: "WEB_nw_native_1-N345765840"  // NAM 광고 유닛 ID
+                  adUnitId: isAndroid ? 'Classting_Post_Native_Android-N256497692' : 'Classting_Post_Native_iOS-N256497692'  // NAM 광고 유닛 ID
                }
              }
            });
