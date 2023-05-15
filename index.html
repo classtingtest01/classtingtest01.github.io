@@ -3,7 +3,7 @@
       <script async src="https://ssp.igaw.io/sdk/apsspads.js"></script>
       <style>
          .ad-banner {
-            height: 180px;
+            height: 80px;
          }
       </style>
    </head>
@@ -15,10 +15,10 @@
 	
    <script>
     const ANDROID_APP_KEY = '783297646';
-    const ANDROID_PLACEMENT_ID = 'VIT89RLZ2am3YQr';
+    const ANDROID_PLACEMENT_ID = '6s4yzJoPcie21Yz';
 
     const IOS_APP_KEY = '139927226';
-    const IOS_PLACEMENT_ID = 'sXG66shkLnbncQd';
+    const IOS_PLACEMENT_ID = 'xUPzBinjJ0Mu2SV';
 
     const DeviceType =  {
       ANDROID : 'classting_android',
@@ -36,9 +36,10 @@
       apsspads.defineAdUnits({
         code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
         plcmtId: placementId,  // 애드팝콘 지면 Id
+	size: [300, 250],
         fallback: {
           nam: {
-   	  adUnitId: isAndroid ? 'Classting_Noti_Native_Android-N256497692' : 'Classting_Noti_Native_iOS-N256497692'  // NAM 광고 유닛 ID
+//    	  adUnitId: isAndroid ? 'Classting_Noti_Native_Android-N256497692' : 'Classting_Noti_Native_iOS-N256497692'  // NAM 광고 유닛 ID
           }
         }
       });
