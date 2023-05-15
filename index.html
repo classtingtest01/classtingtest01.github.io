@@ -32,16 +32,16 @@
 
     var apsspads = window.apsspads || { cmd: [] };
     apsspads.cmd.push(function() {
-      apsspads.setConfig({ pubId: appKey, nam: true}); // 애드팝콘 앱키
+      apsspads.setConfig({ pubId: appKey}); // 애드팝콘 앱키
       apsspads.defineAdUnits({
         code: "banner",  // 광고 노출 영역 (HTML Element)의 Id
         plcmtId: placementId,  // 애드팝콘 지면 Id
 	size: [300, 250],
-        fallback: {
-          nam: {
+//         fallback: {
+//           nam: {
 //    	  adUnitId: isAndroid ? 'Classting_Noti_Native_Android-N256497692' : 'Classting_Noti_Native_iOS-N256497692'  // NAM 광고 유닛 ID
-          }
-        }
+//           }
+//         }
       });
       apsspads.addEventListener("error", function(obj) { // 광고 미 노출 시 호출
 	console.log('에러 :', obj); // {providerName: "apssp|nam", code: "banner", stat: 0}
