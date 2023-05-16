@@ -10,17 +10,16 @@
   </head>
 
   <body>
-    <p>안녕</p>
-    <div id="startBannerAndroid" class="ad-banner"></div>
-    <div id="classTabBannerAndroid" class="ad-banner"></div>
-    <div id="insightTabBannerAndroid" class="ad-banner"></div>
-    <div id="moreTabBannerAndroid" class="ad-banner"></div>
-    <div id="notiBannerAndroid" class="ad-banner"></div>
-    <div id="startBannerIOS" class="ad-banner"></div>
-    <div id="classTabBannerIOS" class="ad-banner"></div>
-    <div id="insightTabBannerIOS" class="ad-banner"></div>
-    <div id="moreTabBannerIOS" class="ad-banner"></div>
-    <div id="notiBannerIOS" class="ad-banner"></div>
+    <p>startBanner</p>
+    <div id="startBanner" class="ad-banner"></div>
+    <p>classTabBanner</p>
+    <div id="classTabBanner" class="ad-banner"></div>
+    <p>insightTabBanner</p>
+    <div id="insightTabBanner" class="ad-banner"></div>
+    <p>moreTabBanner</p>
+    <div id="moreTabBanner" class="ad-banner"></div>
+    <p>notiBanner</p>
+    <div id="notiBanner" class="ad-banner"></div>
   </body>
 
   <script>
@@ -75,7 +74,7 @@
         nam: true
       }); // 애드팝콘 앱키
       apsspads.defineAdUnits([{
-          code: "startBannerAndroid",
+          code: "startBanner",
           plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.startBannerIOS,
           size: [300, 250],
           fallback: {
@@ -85,7 +84,7 @@
           }
         },
         {
-          code: "classTabBannerAndroid",
+          code: "classTabBanner",
           plcmtId: isAndroid ? placementID.classTabBannerAndroid : placementID.classTabBannerIOS,
           size: [300, 250],
           fallback: {
@@ -95,7 +94,7 @@
           }
         },
         {
-          code: "insightTabBannerAndroid",
+          code: "insightTabBanner",
           plcmtId: isAndroid ? placementID.insightTabBannerAndroid : placementID.insightTabBannerIOS,
           size: [300, 250],
           fallback: {
@@ -105,7 +104,7 @@
           }
         },
         {
-          code: "moreTabBannerAndroid",
+          code: "moreTabBanner",
           plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.moreTabBannerIOS,
           size: [300, 250],
           fallback: {
@@ -115,7 +114,7 @@
           }
         },
         {
-          code: "notiBannerAndroid",
+          code: "notiBanner",
           plcmtId: isAndroid ? placementID.notiBannerAndroid : placementID.notiBannerIOS,
           size: [300, 250],
           fallback: {
