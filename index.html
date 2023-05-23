@@ -89,12 +89,13 @@
         pubId: appKey,
         nam: true
       });
-apsspads.defineAdUnits(    {
-          code: "postNative",
-          plcmtId: isAndroid ? placementID.postNativeAndroid : placementID.postNativeIOS,
+apsspads.defineAdUnits(  {
+          code: "moreTabBanner",
+          plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.moreTabBannerIOS,
+          size: [300, 250],
           fallback: {
             nam: {
-              adUnitId: isAndroid ? adUnitID.postNativeAndroid : adUnitID.postNativeIOS
+              adUnitId: isAndroid ? adUnitID.startBannerAndroid : adUnitID.moreTabBannerIOS
             }
           }
         });
