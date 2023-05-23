@@ -89,7 +89,57 @@
         pubId: appKey,
         nam: true
       });
-apsspads.defineAdUnits(    {
+apsspads.defineAdUnits([{
+          code: "startBanner",
+          plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.startBannerIOS,
+          size: [300, 250],
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.startBannerAndroid : adUnitID.startBannerIOS
+            }
+          }
+        },
+        {
+          code: "classTabBanner",
+          plcmtId: isAndroid ? placementID.classTabBannerAndroid : placementID.classTabBannerIOS,
+          size: [300, 250],
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.classTabBannerAndroid : adUnitID.classTabBannerIOS
+            }
+          }
+        },
+        {
+          code: "insightTabBanner",
+          plcmtId: isAndroid ? placementID.insightTabBannerAndroid : placementID.insightTabBannerIOS,
+          size: [300, 250],
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.insightTabBannerAndroid : adUnitID.insightTabBannerIOS
+            }
+          }
+        },
+        {
+          code: "moreTabBanner",
+          plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.moreTabBannerIOS,
+          size: [300, 250],
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.startBannerAndroid : adUnitID.moreTabBannerIOS
+            }
+          }
+        },
+        {
+          code: "notiBanner",
+          plcmtId: isAndroid ? placementID.notiBannerAndroid : placementID.notiBannerIOS,
+          size: [300, 250],
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.notiBannerAndroid : adUnitID.notiBannerIOS
+            }
+          }
+        },
+        {
           code: "postNative",
           plcmtId: isAndroid ? placementID.postNativeAndroid : placementID.postNativeIOS,
           fallback: {
@@ -97,7 +147,25 @@ apsspads.defineAdUnits(    {
               adUnitId: isAndroid ? adUnitID.postNativeAndroid : adUnitID.postNativeIOS
             }
           }
-        });
+        }, {
+          code: "classTalkNative",
+          plcmtId: isAndroid ? placementID.classTalkNativeAndroid : placementID.classTalkNativeIOS,
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.classTalkNativeAndroid : adUnitID.classTalkNativeIOS
+            }
+          }
+        },
+        {
+          code: "notiNative",
+          plcmtId: isAndroid ? placementID.notiNativeAndroid : placementID.notiNativeIOS,
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.notiNativeAndroid : adUnitID.notiNativeIOS
+            }
+          }
+        },
+      ]);
 
       apsspads.addEventListener("error", function(obj) { // 광고 미 노출 시 호출
         console.log('에러 :', obj); // {providerName: "apssp|nam", code: "banner", stat: 0}
