@@ -31,8 +31,8 @@
   </body>
 
   <script>
-    const ANDROID_APP_KEY = 'N256497692';
-    const IOS_APP_KEY = 'N256497692';
+    const ANDROID_APP_KEY = '783297646';
+    const IOS_APP_KEY = '139927226';
 
     const DeviceType = {
       ANDROID: 'classting_android',
@@ -89,33 +89,32 @@
         pubId: appKey,
         nam: true
       });
-apsspads.defineAdUnits(  {
-          code: "moreTabBanner",
-          plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.moreTabBannerIOS,
-          size: [300, 250],
+      apsspads.defineAdUnits({
+         code: "postNative",
+          plcmtId: isAndroid ? placementID.postNativeAndroid : placementID.postNativeIOS,
           fallback: {
             nam: {
-              adUnitId: isAndroid ? adUnitID.startBannerAndroid : adUnitID.moreTabBannerIOS
+              adUnitId: isAndroid ? adUnitID.postNativeAndroid : adUnitID.postNativeIOS
             }
           }
-        });
+      });
 
 
       apsspads.addEventListener("error", function(obj) { // 광고 미 노출 시 호출
         console.log('에러 :', obj); // {providerName: "apssp|nam", code: "banner", stat: 0}
       });
       apsspads.setClickHandler(function(code, curl) { // 광고 클릭 시 실행
-				// code: 광고 노출 영역 (HTML Element)의 Id
-				// curl: 클릭 URL
-	      window.ReactNativeWebView.postMessage(JSON.stringify({
-  category: 'navigation',
-  type: 'open',
-  payload: {
-    url: curl,
-  },
-}));
-				console.log(code, curl);
-			});
+        // code: 광고 노출 영역 (HTML Element)의 Id
+        // curl: 클릭 URL
+        window.ReactNativeWebView.postMessage(JSON.stringify({
+          category: 'navigation',
+          type: 'open',
+          payload: {
+            url: curl,
+          },
+        }));
+        console.log(code, curl);
+      });
       apsspads.requestBids();
     });
   </script>
