@@ -103,7 +103,7 @@
     const isAndroid = device.includes(DeviceType.ANDROID);
     const appKey = isAndroid ? ANDROID_APP_KEY : IOS_APP_KEY;
 
-    const apsspads = window.apsspads || {
+    var apsspads = window.apsspads || {
       cmd: []
     };
     apsspads.cmd.push(function() {
