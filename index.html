@@ -28,9 +28,31 @@
     <div id="classTalkNative" class="ad-native"></div>
     <p>notiNative</p>
     <div id="notiNative" class="ad-native"></div>
+    
+    <p>window.open("")</p>
+    <button id="test" class="test" >Click Me</button>
+    
+      <p>window.open("https://naver.com")</p>
+    <button id="test1" class="test" >Click Me</button>
   </body>
 
   <script>
+   document.addEventListener("DOMContentLoaded", function() {
+      var button = document.getElementById("test");
+     var button2 = document.getElementById("test1");
+     
+      button.addEventListener("click", function() {
+        console.log("Button clicked!");
+        window.open("")
+      });
+     
+        button2.addEventListener("click", function() {
+        console.log("Button clicked!");
+        window.open("https://www.naver.com")
+      });
+    });
+    
+    
     const ANDROID_APP_KEY = '783297646';
     const IOS_APP_KEY = '139927226';
 
