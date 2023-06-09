@@ -28,12 +28,6 @@
     <div id="classTalkNative" class="ad-native"></div>
     <p>notiNative</p>
     <div id="notiNative" class="ad-native"></div>
-    
-    <p>window.open("")</p>
-    <button id="test" class="test" >Click Me</button>
-    
-      <p>window.open("https://naver.com")</p>
-    <button id="test1" class="test" >Click Me</button>
   </body>
 
   <script>
@@ -103,7 +97,7 @@
     const isAndroid = device.includes(DeviceType.ANDROID);
     const appKey = isAndroid ? ANDROID_APP_KEY : IOS_APP_KEY;
 
-    var apsspads = window.apsspads || {
+    window.apsspads = window.apsspads || {
       cmd: []
     };
     apsspads.cmd.push(function() {
@@ -196,16 +190,14 @@
       apsspads.setClickHandler(function(code, curl) { // 광고 클릭 시 실행
         // code: 광고 노출 영역 (HTML Element)의 Id
         // curl: 클릭 URL
-//         window.ReactNativeWebView.postMessage(JSON.stringify({
-//           category: 'navigation',
-//           type: 'open',
-//           payload: {
-//             url: curl,
-//           },
-//         }));
-        
-        window.open(curl);
-        console.log(code, curl);
+        window.ReactNativeWebView.postMessage(JSON.stringify({
+          category: 'navigation',
+          type: 'open',
+          payload: {
+            url: curl,
+          },
+        }));
+       
       });
       apsspads.requestBids();
     });
