@@ -92,7 +92,8 @@
         nam: true
       });
       apsspads.defineAdUnits(
-//         [{
+        [
+          // {
 //           code: "startBanner",
 //           plcmtId: isAndroid ? placementID.startBannerAndroid : placementID.startBannerIOS,
 //           size: [300, 250],
@@ -132,16 +133,16 @@
 //             }
 //           }
 //         },
-//         {
-//           code: "notiBanner",
-//           plcmtId: isAndroid ? placementID.notiBannerAndroid : placementID.notiBannerIOS,
-//           size: [300, 250],
-//           fallback: {
-//             nam: {
-//               adUnitId: isAndroid ? adUnitID.notiBannerAndroid : adUnitID.notiBannerIOS
-//             }
-//           }
-//         },
+        {
+          code: "notiBanner",
+          plcmtId: isAndroid ? placementID.notiBannerAndroid : placementID.notiBannerIOS,
+          size: [300, 250],
+          fallback: {
+            nam: {
+              adUnitId: isAndroid ? adUnitID.notiBannerAndroid : adUnitID.notiBannerIOS
+            }
+          }
+        },
 //         {
 //           code: "postNative",
 //           plcmtId: isAndroid ? placementID.postNativeAndroid : placementID.postNativeIOS,
@@ -159,25 +160,16 @@
 //             }
 //           }
 //         },
-//         {
-//           code: "notiNative",
-//           plcmtId: isAndroid ? placementID.notiNativeAndroid : placementID.notiNativeIOS,
-//           fallback: {
-//             nam: {
-//               adUnitId: isAndroid ? adUnitID.notiNativeAndroid : adUnitID.notiNativeIOS
-//             }
-//           }
-//         },
-//       ]
-       {
-          code: "postNative",
-          plcmtId: isAndroid ? placementID.postNativeAndroid : placementID.postNativeIOS,
+        {
+          code: "notiNative",
+          plcmtId: isAndroid ? placementID.notiNativeAndroid : placementID.notiNativeIOS,
           fallback: {
             nam: {
-              adUnitId: isAndroid ? adUnitID.postNativeAndroid : adUnitID.postNativeIOS
+              adUnitId: isAndroid ? adUnitID.notiNativeAndroid : adUnitID.notiNativeIOS
             }
           }
-        }
+        },
+      ]
       );
 
 
