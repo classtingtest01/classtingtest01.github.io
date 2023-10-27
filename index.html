@@ -263,9 +263,14 @@ apsspads.cmd.push(function() {
     postToNative('error', { message: 'error', detail: error });
   });
 
-  apsspads.setClickHandler(function(code, curl) {
-    postToNative('click', { code: code, curl: curl });
+    apsspads.addEventListener('clicked', function (event) {
+    console.log('clicked', event)
+    postToNative('clicked', { message: 'clicked', detail: event });
   });
+
+  // apsspads.setClickHandler(function(code, curl) {
+  //   postToNative('click', { code: code, curl: curl });
+  // });
 
   apsspads.requestBids();
 });
