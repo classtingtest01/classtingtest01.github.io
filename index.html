@@ -254,10 +254,12 @@ apsspads.cmd.push(function() {
   );
 
   apsspads.addEventListener('loaded', function (result) {
+    console.log('loaded', result)
     postToNative('loaded', { result: result, layout: measureAdElement() });
   });
 
   apsspads.addEventListener('error', function (error) {
+    console.log('error', error)
     postToNative('error', { message: 'error', detail: error });
   });
 
