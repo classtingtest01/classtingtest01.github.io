@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
   <head>
     <script async src="https://ssp.igaw.io/sdk/apsspads.js"></script>
     <style>
@@ -194,4 +194,110 @@
     });
   </script>
 
+</html>
+ -->
+
+ <html>
+  <head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p>startPopup</p>
+    <div id="startPopup" class="ad-banner"></div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/resize-observer-polyfill@1.5.1/dist/ResizeObserver.global.min.js"
+    ></script>
+    <script type="text/javascript" src="./apssp.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var adElement = document.getElementById("startPopup");
+
+        function postToNative(event, payload) {
+          if (
+            window.ReactNativeWebView &&
+            typeof window.ReactNativeWebView.postMessage === "function"
+          ) {
+            window.ReactNativeWebView.postMessage(
+              JSON.stringify({
+                type: "__adpopcorn_start_popup",
+                event,
+                payload,
+              }),
+            );
+          }
+        }
+
+        window.onerror = function (error) {
+          postToNative("error", {
+            message:
+              error instanceof Error ? error.message : "unexpected error",
+          });
+        };
+
+        if (typeof window.apsspads !== "object") {
+          postToNative("error", { message: "not initialized" });
+          return;
+        }
+
+        if (typeof adElement === null) {
+          postToNative("error", { message: "unable to get ad element" });
+          return;
+        }
+
+        new ResizeObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].contentRect && entries[i].contentRect.height > 0) {
+              postToNative("attached", { layout: entries[i].contentRect });
+            }
+          }
+        }).observe(adElement);
+
+        apsspads.cmd.push(function () {
+          apsspads.setConfig({
+            pubId: "139927226",
+            nam: true,
+            noBorder: true,
+          });
+
+          apsspads.defineAdUnits([
+            {
+              code: "startPopup",
+              plcmtId: "tUuF2VsGb77rB9F",
+              size: [300, 250],
+              fallback: {
+                nam: {
+                  adUnitId: "Classting_Start_Banner_iOS-N256497692",
+                },
+              },
+            },
+          ]);
+
+          apsspads.addEventListener("loaded", function (result) {
+            postToNative("loaded", { result });
+          });
+
+          apsspads.addEventListener("error", function (error) {
+            window._e = error;
+            postToNative("error", {
+              message: "from apsspads error event",
+              detail: error,
+            });
+          });
+
+          apsspads.setClickHandler(function (code, curl) {
+            postToNative("click", { code, curl });
+          });
+
+          apsspads.requestBids();
+        });
+      };
+    </script>
+  </body>
 </html>
