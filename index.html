@@ -1,5 +1,4 @@
-<!-- <html>
-
+<html>
   <head>
     <script async src="https://ssp.igaw.io/sdk/apsspads.js"></script>
     <style>
@@ -195,86 +194,4 @@
     });
   </script>
 
-</html>
- -->
-
- <html
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <style>
-      html, body { margin: 0; padding: 0; }
-    </style>
-    <script type="text/javascript" src="https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js" async></script>
-    <script type="text/javascript" src="https://ssp.igaw.io/sdk/apsspads.js" async></script>
-    <script type="text/javascript" src="https://ssl.pstatic.net/tveta/libs/glad/prod/2.20.0/gfp-sdk.js" async></script>
-    <script type="text/javascript" src="https://ssl.pstatic.net/tveta/libs/glad/prod/2.20.0/gfp-ext-nda.js" async></script>
-  <body>
-    <div id="tUuF2VsGb77rB9F" class="ad-banner"></div>
-    <script type="text/javascript">
-
-      window.apsspads = window.apsspads || { cmd: [] };
-
-function postToNative(event, payload) {
-  if (window.ReactNativeWebView && typeof window.ReactNativeWebView.postMessage === 'function') {
-    window.ReactNativeWebView.postMessage(JSON.stringify({
-      type: 'foo',
-      event: event,
-      payload: payload
-    }));
-  }
-}
-
-function measureAdElement() {
-  var adElement = document.getElementById('tUuF2VsGb77rB9F');
-  return {
-    width: adElement.width,
-    height: adElement.height,
-  };
-}
-
-apsspads.cmd.push(function() {
-  apsspads.setConfig({
-    pubId: '139927226',
-    nam: true,
-  });
-
-  apsspads.defineAdUnits(
-    [
-      {
-        code: 'tUuF2VsGb77rB9F',
-        plcmtId: 'tUuF2VsGb77rB9F',
-        size: [300, 250],
-        fallback: {
-          nam: {
-            adUnitId: 'Classting_Start_Banner_iOS-N256497692'
-          }
-        }
-      }
-    ]
-  );
-
-  apsspads.addEventListener('loaded', function (result) {
-    console.log('loaded', result)
-    postToNative('loaded', { result: result, layout: measureAdElement() });
-  });
-
-  apsspads.addEventListener('error', function (error) {
-    console.log('error', error)
-    postToNative('error', { message: 'error', detail: error });
-  });
-
-    apsspads.addEventListener('clicked', function (event) {
-    console.log('clicked', event)
-    postToNative('clicked', { message: 'clicked', detail: event });
-  });
-
-  // apsspads.setClickHandler(function(code, curl) {
-  //   postToNative('click', { code: code, curl: curl });
-  // });
-
-  apsspads.requestBids();
-});
-
-    </script>
-  </body>
 </html>
